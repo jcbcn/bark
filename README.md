@@ -19,4 +19,5 @@
     - Linking
     - Graph
 - bark-frontend
-    - Render using ggez
+    - Text - glyph-brush
+    - Window - winit
