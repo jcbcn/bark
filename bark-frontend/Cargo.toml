@@ -8,6 +8,7 @@ build = "build.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+bark-core = { path = "../bark-core" }
 glutin = "0.26.0"
 winit = "0.24.0"
 takeable-option = "0.4"

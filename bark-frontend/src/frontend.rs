@@ -1,4 +1,5 @@
 use crate::support;
+use bark_core;
 
 use glutin::event::{Event, WindowEvent};
 use glutin::event_loop::{ControlFlow, EventLoop};
@@ -6,6 +7,8 @@ use glutin::window::WindowBuilder;
 use glutin::ContextBuilder;
 
 pub fn run() {
+    println!("{}", bark_core::STRING);
+
     let el = EventLoop::new();
     let wb = WindowBuilder::new().with_title("A fantastic window!");
 
