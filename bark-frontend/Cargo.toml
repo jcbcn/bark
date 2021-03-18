@@ -14,3 +14,4 @@ glyph_brush = "0.7.2"
 gl = "0.14"
 env_logger = { version = "0.8", default-features = false }
 spin_sleep = "1"
+chrono = "0.4"

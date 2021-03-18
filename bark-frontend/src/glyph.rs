@@ -20,6 +20,7 @@ use std::{
     io::{self, Write},
     mem, ptr, str,
 };
+use chrono::{DateTime, Utc};
 
 pub type Res<T> = Result<T, Box<dyn std::error::Error>>;
 /// `[left_top * 3, right_bottom * 2, tex_left_top * 2, tex_right_bottom * 2, color * 4]`
@@ -80,8 +81,9 @@ pub fn start() -> Res<()> {
 
     let mut text_pipe = GlTextPipe::new(dimensions)?;
 
-    let mut text: String = include_str!("text/lipsum.txt").into();
-    let mut font_size: f32 = 18.0;
+    //let mut text: String = include_str!("text/lipsum.txt").into();
+    let mut text: String = Utc::now().to_rfc2822();
+    let mut font_size: f32 = 36.0;
 
     let mut loop_helper = spin_sleep::LoopHelper::builder().build_with_target_rate(250.0);
     let mut vertex_count = 0;
@@ -153,7 +155,7 @@ pub fn start() -> Res<()> {
 
                 glyph_brush.queue(
                     Section::default()
-                        .add_text(base_text.with_color([0.5, 1.0, 1.0, 1.0]))
+                        .add_text(base_text.with_color([0.0, 0.0, 0.0, 1.0]))
                         .with_screen_position((0.0, 0.0))
                         .with_bounds((width, height))
                         .with_layout(
@@ -502,7 +504,7 @@ impl GlTextPipe {
             gl::BlendFunc(gl::SRC_ALPHA, gl::ONE_MINUS_SRC_ALPHA);
             // Use srgb for consistency with other examples
             gl::Enable(gl::FRAMEBUFFER_SRGB);
-            gl::ClearColor(0.02, 0.02, 0.02, 1.0);
+            gl::ClearColor(1.0, 1.0, 1.0, 1.0);
             gl_assert_ok!();
 
             uniform
