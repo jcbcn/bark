@@ -15,17 +15,15 @@ Bark is a Zettelkasten note taking tool that uses markdown and your local filesy
 ## Architecture
 
 - bark-core
-	- Disk I/O operations
-	- Parsing CommonMark
-	- Search
-		- Indexer
-			- Index links in memory against filename and pos <sup>phase 1</sup>
-			- Index each occurence of a word and its filename and pos <sup>phase 2</sup>
-		- Search
-			- Search the index for an exact match
-			- Linking
-			- Graph
+  - Disk I/O operations
+  - Parsing CommonMark
+  - Search
+    - Indexer
+      - Index links in memory against filename and pos <sup>p1</sup>
+      - Index each occurence of a word and its filename and pos <sup>p2</sup>
+  - Linking
+  - Graph <sup>p2</sup>
 - bark-frontend
-	- Text - glyph-brush
-	- Window - winit
-	- OpenGl - glutin
+  - Text - glyph-brush
+  - Window - winit
+  - OpenGl - glutin
