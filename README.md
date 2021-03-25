@@ -13,17 +13,17 @@
 ## Architecture
 
 - bark-core
-    - Disk I/O operations
-    - Parsing CommonMark
-    - Search
-	- Indexer
-		- Index links in memory against filename and pos <sup>phase 1</sup>
-		- Index each occurence of a word and its filename and pos <sup>phase 2</sup>
+	- Disk I/O operations
+	- Parsing CommonMark
 	- Search
-		- Search the index for an exact match
-    - Linking
-    - Graph
+		- Indexer
+			- Index links in memory against filename and pos <sup>phase 1</sup>
+			- Index each occurence of a word and its filename and pos <sup>phase 2</sup>
+		- Search
+			- Search the index for an exact match
+			- Linking
+			- Graph
 - bark-frontend
-    - Text - glyph-brush
-    - Window - winit
-    - OpenGl - glutin
+	- Text - glyph-brush
+	- Window - winit
+	- OpenGl - glutin
