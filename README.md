@@ -2,7 +2,7 @@
 
 [![Rust](https://github.com/jcbcn/bark/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/jcbcn/bark/actions/workflows/rust.yml)
 
-Bark is a privacy-first Zettelkasten-style note taking tool using markdown and your local file system 
+Bark is an OpenGL based markdown editor that is lean, fast and privacy focused! 
 
 ## Ideas
 
