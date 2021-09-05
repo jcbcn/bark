@@ -64,7 +64,7 @@ pub fn new(lines: std::io::Lines<BufReader<std::fs::File>>) -> Res<()> {
         )?;
     let window_ctx = unsafe { window_ctx.make_current().unwrap() };
 
-    let dejavu = FontRef::try_from_slice(include_bytes!("../fonts/OpenSans-Light.ttf"))?;
+    let dejavu = FontRef::try_from_slice(include_bytes!("../fonts/OpenSans-Regular.ttf"))?;
     let mut glyph_brush = GlyphBrushBuilder::using_font(dejavu).build();
 
     // Load the OpenGL function pointers
@@ -89,7 +89,7 @@ pub fn new(lines: std::io::Lines<BufReader<std::fs::File>>) -> Res<()> {
         text.push_str("\n");
     }
 
-    let mut font_size: f32 = 36.0;
+    let mut font_size: f32 = 20.0;
 
     let mut loop_helper = spin_sleep::LoopHelper::builder().build_with_target_rate(120.0);
     let mut vertex_count = 0;
